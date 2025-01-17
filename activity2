@@ -1,0 +1,35 @@
+etName = findViewById(R.id.etName);
+        etPassword = findViewById(R.id.etPassword);
+        btnBack = findViewById(R.id.btnBack);
+        btnNext = findViewById(R.id.btnNext);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+            }
+        });
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = etName.getText().toString().trim();
+                String password = etPassword.getText().toString().trim();
+                if(name.isEmpty() || password.isEmpty())
+                {
+                    if(name.isEmpty())
+                    {
+                        etName.setError("please enter name");
+                    }
+                    if(password.isEmpty())
+                    {
+                        etPassword.setError("please enter password");
+                    }
+                }
+
+                Intent intent=  new Intent(MainActivity2.this, MainActivity3.class);
+                intent.putExtra("name", name);
+                intent.putExtra("password", password);
+                startActivity(intent);
+            }
+        });
