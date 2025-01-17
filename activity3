@@ -1,0 +1,40 @@
+ImageView ivImages;
+    Button btnSwitchImg, btnNext, btnBack;
+
+    TextView tvName ;
+    int current_index = 0;
+    int[] images = {R.mipmap.imimage1, R.mipmap.imimage2, R.mipmap.imimage3};
+
+ ivImages = findViewById(R.id.ivImages);
+        btnSwitchImg = findViewById(R.id.btnSwitchImg);
+        btnBack = findViewById(R.id.btnBack);
+        btnNext = findViewById(R.id.btnNext);
+        tvName = findViewById(R.id.tvName);
+
+        btnSwitchImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                current_index = (current_index + 1) % images.length;
+                ivImages.setImageResource(images[current_index]);
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity3.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
+                startActivity(intent);
+            }
+        });
+
+        String name = getIntent().getStringExtra("name");
+        String password = getIntent().getStringExtra("password");
+        tvName.setText("Hello " + name + " password " + password);
