@@ -1,0 +1,30 @@
+ MediaPlayer media = MediaPlayer.create(this, R.raw.audio);
+        Button btnAudio = findViewById(R.id.btnAudio);
+        VideoView vvVideo = findViewById(R.id.vvVideo);
+
+        btnAudio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(media.isPlaying())
+                {
+                    media.pause();
+                    btnAudio.setText("play");
+                }
+                else {
+                    media.start();
+                    btnAudio.setText("pause");
+                }
+            }
+        });
+
+        vvVideo.setVideoPath("android.resource://" + getPackageName() + "/" + R.raw.video);
+        vvVideo.start();
+
+        Button btnNext = findViewById(R.id.btnNext);
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity4.this, MainActivity5.class);
+                startActivity(intent);
+            }
+        });
