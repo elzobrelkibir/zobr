@@ -1,0 +1,19 @@
+ <item android:state_enabled="true" android:state_focused="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/YellowBright"/>
+            <stroke android:width="5dp"
+                android:color="@color/BlueDark"/>
+            <corners android:topLeftRadius="250dp"
+                android:bottomRightRadius="250dp"/>
+        </shape>
+    </item>
+
+    <item android:state_enabled="true" android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/BlueDark"/>
+            <stroke android:width="5dp"
+                android:color="@color/YellowBright"/>
+            <corners android:topLeftRadius="250dp"
+                android:bottomRightRadius="250dp"/>
+        </shape>
+    </item>
