@@ -1,0 +1,18 @@
+<item android:state_pressed="false">
+        <shape android:shape="oval">
+            <solid android:color="@color/lightBlue"/>
+            <stroke android:width="10dp"
+                android:color="@color/darkBlue"
+                />
+        </shape>
+    </item>
+
+
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="@color/darkBlue"/>
+            <stroke android:width="10dp"
+                android:color="@color/lightBlue"
+        />
+        </shape>
+    </item>
