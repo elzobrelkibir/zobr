@@ -1,0 +1,18 @@
+textview = findViewById(R.id.textView);
+        btnNext = findViewById(R.id.btnNext);
+        btnExit = findViewById(R.id.btnExit);
+
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finishAffinity();
+            }
+        });
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
