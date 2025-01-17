@@ -1,0 +1,15 @@
+TextView textView3;
+    RadioGroup radiogroup;
+ textView3 = findViewById(R.id.textView3);
+        radiogroup = findViewById(R.id.radiogroup);
+
+        radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton rb = findViewById(checkedId);
+                if(rb != null)
+                {
+                    textView3.setText(rb.getText());
+                }
+            }
+        });
